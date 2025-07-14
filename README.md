@@ -1,61 +1,146 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏢 Laravel ERP System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A complete **HR ERP System** built with Laravel that helps manage employees,
+attendance, leaves, salaries, notifications, and internal communication.
+It’s designed for organizations looking to automate and streamline their
+internal operations with a user-friendly and scalable system.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🧩 Key Modules
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. 👨‍💼 Employee Management
+- Add/Edit/Delete employee records
+- View all employee details in a list
+- Individual employee profile view
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. 📅 Attendance System
+- Mark attendance for each employee
+- View daily/monthly attendance
+- Export attendance to PDF
 
-## Learning Laravel
+### 3. 📝 Leave Management
+- Apply for leave
+- Admin can approve/reject leave
+- Leave history with filters
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 4. 💰 Salary Management
+- Generate monthly salaries
+- View payslips (PDF)
+- Track employee-wise salary history
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 5. 🔔 Real-Time Notifications
+- New employee added
+- Leave approved/rejected
+- Salary generated alert
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 6. 💬 Chat System
+- Real-time messaging between employees
+- Typing indicators
+- Message history (edit/delete supported)
 
-## Laravel Sponsors
+### 7. 🔎 Live Search (Google-style)
+- Instant search suggestions while typing
+- Search across:  
+  - Employees  
+  - Attendance  
+  - Leaves  
+  - Salaries  
+  - Reports
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 8. 📊 Reports Module
+- Downloadable reports (PDF support)
+- Filter by employee, date, or type
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## ⚙️ Technologies Used
 
-## Contributing
+| Tech | Description |
+|------|-------------|
+| Laravel | PHP Framework |
+| PHP 8+ | Backend logic |
+| MySQL | Database |
+| Tailwind CSS | UI Styling |
+| Blade | Templating |
+| JavaScript | Frontend interactions |
+| Git & GitHub | Version Control |
+| DomPDF | PDF Generation |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📁 Project Structure & Planning
 
-## Security Vulnerabilities
+### 🧱 Step 1: Folder Structure (Laravel)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 🗄️ Step 2: Database Tables
+
+| Table Name     | Purpose                            |
+|----------------|------------------------------------|
+| `users`        | Login, authentication & roles      |
+| `employees`    | Employee details                   |
+| `attendances`  | Daily attendance records           |
+| `leaves`       | Leave applications & status        |
+| `salaries`     | Salary details and payslips        |
+| `reports`      | Generated reports                  |
+| `messages`     | Chat messages                      |
+| `notifications`| Real-time alerts                   |
+
+---
+
+### 🖼️ Step 3: UI Pages Created
+
+- Login Page
+- Register Page
+- Home Page
+- Dashboard
+- Employee Form (Add/Edit)
+- Employee Profile View
+- Attendance Form
+- Attendance PDF Export
+- Leave Application Page
+- Salary Generation Page
+- Payslip PDF View
+- Reports Page
+- Settings Page
+- Help Page
+- Chat Page
+- Chat Dashboard
+- Live Search Result Pages (Employee, Attendance, Leave, Salary, Reports)
+
+---
+
+### ⚙️ Step 4: Backend Functionalities
+
+- ✅ CRUD operations for Employees
+- ✅ Attendance: Marking, Viewing, PDF Export
+- ✅ Leaves: Apply, Approve, Reject
+- ✅ Salaries: Auto-calculate and PDF Payslip
+- ✅ Real-time Notifications for events
+- ✅ Role-based Login System (Admin & User)
+- ✅ Reports Generation & Filtering
+- ✅ Google-style Live Search (across modules)
+- ✅ Real-time Chat with typing indicator
+
+---
+
+### ✅ Step 5: Testing & Final Touches
+
+- 🚫 Form Validations (required fields, email, dates)
+- ✅ Flash Messages for success/errors
+- 📱 Mobile-friendly, responsive layout
+- 🎨 Clean, minimal, and user-friendly UI
+- 🛡️ Security checks (authentication middleware, CSRF)
+
+---
+
+
+## 🚀 How to Run This Project
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/irsa239/ERP-System.git
