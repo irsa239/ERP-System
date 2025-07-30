@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- Company Header -->
-    <h1 style="text-align:center; margin-bottom:0;">SmartStaff HR ERP System</h1>
+    <h1 style="text-align:center; margin-bottom:0;">Zentro HR ERP System</h1>
     <p style="text-align:center; margin-top:2px;">Salary Payslip for the Month of {{ \Carbon\Carbon::parse($month)->format('F Y') }}</p>
     <hr>
 

@@ -11,10 +11,32 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BiometricAttendanceController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\PerformanceController;
+
+       
 
 
 
+Route::resource('projects', ProjectController::class);
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
+
+
+// Biometric Routes
+
+Route::get('/biometric', [BiometricAttendanceController::class, 'index'])->name('biometric.index');
+Route::get('/biometric/create', [BiometricAttendanceController::class, 'create'])->name('biometric.create');
+Route::post('/biometric', [BiometricAttendanceController::class, 'store'])->name('biometric.store');
+
+
+// Events
+Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
+Route::post('/events', [EventController::class, 'store'])->name('events.store');
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +54,8 @@ Route::get('layout', function () {
 Route::get('home', function () {
     return view('home');
 });
+Route::post('/home', [ContactController::class, 'store'])->name('contact.store');
+
 Route::get('employee', function () {
     return view('employee-form');
 });
@@ -152,3 +176,46 @@ Route::get('/reports/{id}', function($id){
     return view('live-search.report-show', compact('report'));
 })->name('reports.show');
 
+
+
+// Performance Insight
+Route::get('/performance/create', [PerformanceController::class, 'create'])->name('performance.create');
+Route::get('/performance/{id}', [PerformanceController::class, 'show'])->name('performance.show');
+
+// Performance Insight Module Routes
+Route::prefix('performance')->name('performance.')->group(function () {
+
+    // Show all performance entries
+    Route::get('/', [PerformanceController::class, 'index'])->name('index');
+
+    // Show form to create new performance record
+    Route::get('/create', [PerformanceController::class, 'create'])->name('create');
+
+    // Store new performance record
+    Route::post('/store', [PerformanceController::class, 'store'])->name('store');
+
+    // Show individual performance detail
+    Route::get('/show/{id}', [PerformanceController::class, 'show'])->name('performance.show');
+
+    // Show form to edit performance record
+    Route::get('/edit/{id}', [PerformanceController::class, 'edit'])->name('edit');
+
+    // Update existing performance record
+    Route::put('/update/{id}', [PerformanceController::class, 'update'])->name('update');
+
+    // Delete performance record
+    Route::delete('/delete/{id}', [PerformanceController::class, 'destroy'])->name('destroy');
+
+    // Generate PDF for all performance records
+    Route::get('/pdf', [PerformanceController::class, 'pdf'])->name('pdf');
+
+    // Optional: Generate PDF for a single employee
+    Route::get('/pdf/{id}', [PerformanceController::class, 'pdfSingle'])->name('pdf.single');
+
+});
+
+Route::get('/performance/download/{id}', [PerformanceController::class, 'download'])->name('performance.download');
+
+//SelEvaluation Routes
+Route::get('/self-evaluate', [PerformanceController::class, 'selfEvaluate'])->name('self.evaluate');
+Route::post('/self-evaluate', [PerformanceController::class, 'storeSelfEvaluation'])->name('self.evaluate');

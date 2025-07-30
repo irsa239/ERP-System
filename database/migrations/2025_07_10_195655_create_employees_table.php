@@ -18,6 +18,7 @@ return new class extends Migration
         $table->string('designation');
         $table->date('joining_date');
         $table->decimal('salary', 10, 2);
+        $table->string('status')->default('Active'); // ya ->nullable() bhi de sakti ho
         $table->timestamps();
         });
     }

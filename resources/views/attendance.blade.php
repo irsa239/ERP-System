@@ -32,10 +32,15 @@
             </select>
         </div>
         <div class="md:col-span-3 text-right">
-            <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Mark Attendance</button>
-        </div>
+            <button
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Mark Attendance
+  </button>
+</div>
     </form>
 </div>
+
 
 <!-- 🔹 Attendance Records Table -->
 <div class="bg-white p-6 rounded-lg shadow-md mb-10">
@@ -127,13 +132,14 @@
         </div>
 
         <!-- Get Report Button -->
-        <div>
-            <button type="submit"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
-                🔍 Get Report
-            </button>
-        </div>
-
+        <div class="col-span-2 text-right">
+  <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+        🔍 Get Report
+  </button>
+</div>
+        
         <!-- Download PDF -->
         @if(request('type') && request('date'))
         <div>
@@ -149,5 +155,47 @@
         @endif
     </form>
 </section>
+
+<!-- Biometric Attendance -->
+ <div class="bg-white p-6 rounded-lg shadow-md mb-10">
+    <h2 class="text-xl font-bold mb-4">Biometric Attendance List</h2>
+
+    @if(session('success'))
+        <div class="text-green-500">{{ session('success') }}</div>
+    @endif
+
+
+  <br>
+    <table class="w-full table-auto border-collapse">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="border px-4 py-2">Employee</th>
+                <th class="border px-4 py-2">Date</th>
+                <th class="border px-4 py-2">Time In</th>
+                <th class="border px-4 py-2">Time Out</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($attendances as $attendance)
+            <tr>
+                <td class="border px-4 py-2">{{ $attendance->employee->name ?? 'N/A' }}</td>
+                <td class="border px-4 py-2">{{ $attendance->date }}</td>
+                <td class="border px-4 py-2">{{ $attendance->time_in }}</td>
+                <td class="border px-4 py-2">{{ $attendance->time_out }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table><br>
+<div class="md:col-span-3 text-right">
+    <form action="{{ route('biometric.create') }}" method="GET" class="inline-block">
+    <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    ➕ Add Attendance
+  </button>
+</form>
+</div>
+</div>
+
 
 @endsection

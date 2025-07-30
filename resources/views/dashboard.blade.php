@@ -36,6 +36,59 @@
         <canvas id="attendanceChart" class="w-full h-64"></canvas>
     </div>
 
+    <!-- Employee of the month -->
+
+    <div class="bg-white p-6 rounded shadow mt-6">
+    <h2 class="text-lg font-bold text-gray-700 mb-4">Top Performers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @foreach($topPerformers as $employee)
+            <div class="bg-green-50 p-4 rounded text-center">
+                <img src="{{ $employee->profile_photo_url ?? 'https://via.placeholder.com/80' }}" alt="Profile" class="mx-auto rounded-full w-20 h-20 mb-2">
+                <h3 class="font-semibold">{{ $employee->name }}</h3>
+                <p class="text-sm text-gray-600">{{ $employee->position }}</p>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+
+ <!-- Work Anniversaries & Custom Events -->
+<div class="bg-white p-6 rounded-2xl shadow-xl mt-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-5 flex items-center gap-2">
+        <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 7V3M16 7V3M4 11h16M4 19h16M4 15h16M4 7h16"></path>
+        </svg>
+        Upcoming Events
+    </h2>
+    <ul class="space-y-4">
+        @forelse($upcomingEvents as $event)
+            <li class="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all">
+                <div>
+                    <p class="font-semibold text-gray-700">
+                        {{ $event->title ?? ($event->employee->name ?? 'Unknown') }}
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        {{ $event->type }} &middot; 
+                        <span class="text-indigo-500 font-medium">
+                            {{ \Carbon\Carbon::parse($event->date)->format('d M') }}
+                        </span>
+                    </p>
+                </div>
+                @if(isset($event->years))
+                    <span class="inline-block text-xs font-bold text-white bg-blue-500 rounded-full px-3 py-1">
+                        {{ $event->years }} yrs
+                    </span>
+                @endif
+            </li>
+        @empty
+            <li class="py-4 text-center text-gray-400">No upcoming events 🎉</li>
+        @endforelse
+    </ul>
+</div>
+
+
     <!-- Recent Leave Applications -->
     <div class="bg-white p-6 rounded shadow">
         <h2 class="text-lg font-bold text-gray-700 mb-4">Recent Leave Requests</h2>

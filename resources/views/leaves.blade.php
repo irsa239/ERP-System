@@ -39,8 +39,11 @@
             <textarea name="reason" rows="3" class="w-full border px-4 py-2 rounded"></textarea>
         </div>
         <div class="md:col-span-2 text-right">
-            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Submit Request</button>
-        </div>
+            <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Submit Request
+  </button> </div>
     </form>
 </div>
 

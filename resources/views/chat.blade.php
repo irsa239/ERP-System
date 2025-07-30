@@ -17,7 +17,7 @@
                                 @if($user->profile_image)
                                     <img src="{{ asset('storage/' . $user->profile_image) }}" class="w-10 h-10 rounded-full object-cover">
                                 @else
-                                    <div class="w-10 h-10 bg-indigo-200 text-indigo-700 flex items-center justify-center rounded-full font-bold text-sm">
+                                    <div class="w-10 h-10 bg-yellow-200 text-indigo-700 flex items-center justify-center rounded-full font-bold text-sm">
                                         {{ strtoupper(substr($user->name, 0, 1)) }}
                                     </div>
                                 @endif
@@ -38,7 +38,7 @@
     <div class="w-3/4 flex flex-col">
         
         {{-- Chat Header --}}
-        <div class="bg-indigo-600 text-white px-5 py-4 flex justify-between items-center">
+        <div class="bg-black text-white px-5 py-4 flex justify-between items-center">
             <div>
                 @if($receiverId)
                     <div class="font-bold text-lg">

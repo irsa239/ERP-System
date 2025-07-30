@@ -28,9 +28,12 @@
                     <label class="block text-sm font-medium text-gray-700">Address</label>
                     <input type="text" name="company_address" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" value="Lahore, Pakistan">
                 </div>
-            </div>
-            <button type="submit" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>
-        </form>
+            </div><br>
+           <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+   Save
+  </button></form>
     </div>
 
     {{-- Leave Policy Settings --}}
@@ -51,8 +54,12 @@
                     <label class="block text-sm font-medium text-gray-700">Casual Leaves</label>
                     <input type="number" name="casual_leaves" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" value="5">
                 </div>
-            </div>
-            <button type="submit" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>
+            </div><br>
+            <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Save
+  </button>
         </form>
     </div>
 
@@ -70,8 +77,12 @@
                     <label class="block text-sm font-medium text-gray-700">Allowance %</label>
                     <input type="number" name="allowance_percentage" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" value="30">
                 </div>
-            </div>
-            <button type="submit" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>
+            </div><br>
+         <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Save
+  </button>   
         </form>
     </div>
 
@@ -91,8 +102,12 @@
             <div class="flex items-center">
                 <input type="checkbox" name="notify_salary" class="mr-2">
                 <label>Notify employee on salary disbursement</label>
-            </div>
-            <button type="submit" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>
+            </div><br>
+            <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Save
+  </button>
         </form>
     </div>
 </div>

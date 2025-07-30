@@ -34,8 +34,12 @@
             </div>
         </div>
         <div class="mt-4">
-            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Generate Report</button>
-        </div>
+            <button 
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Generatre Report
+  </button>
+    </div>
     </form>
 
     {{-- Report Table --}}

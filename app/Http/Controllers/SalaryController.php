@@ -54,6 +54,8 @@ class SalaryController extends Controller
         return view('salary', [
             'employees' => Employee::all(),
             'salary' => $salary,
+            'allSalaries' => Salary::all()
+
         ]);
     }
 
@@ -91,4 +93,4 @@ class SalaryController extends Controller
         return view('live-search.salary-show', compact('salary'));
     }
 
-}
+}   

@@ -30,8 +30,15 @@
             <input type="number" name="salary" class="w-full border rounded px-4 py-2 mt-1" required>
         </div>
         <div class="col-span-2 text-right">
-            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Add Employee</button>
-        </div>
+  <button type="submit"
+    class="px-6 py-2 rounded hover:opacity-90"
+    style="background-color: #07d5b6; color: black; border: 1px solid black;">
+    Add Employee
+  </button>
+</div>
+
+
+
     </form>
 </div>
 
@@ -77,56 +84,5 @@
         </tbody>
     </table>
 </div>
-
-   
-<!-- Footer Section -->
-<footer class="bg-blue-900 text-white mt-16">
-    <div class="container mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm">
-        
-        <!-- About Company -->
-        <div>
-            <h3 class="text-lg font-semibold mb-4">SmartStaff ERP</h3>
-            <p>SmartStaff is a smart and scalable Human Resource Management System designed to automate your office’s HR tasks efficiently.</p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-                <li><a href="/" class="hover:text-gray-300">Home</a></li>
-                <li><a href="/login" class="hover:text-gray-300">Login</a></li>
-                <li><a href="/register" class="hover:text-gray-300">Register</a></li>
-                <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- ERP Modules -->
-        <div>
-            <h3 class="text-lg font-semibold mb-4">Modules</h3>
-            <ul class="space-y-2">
-                <li><a href="/employees" class="hover:text-gray-300">Employee Management</a></li>
-                <li><a href="/attendance" class="hover:text-gray-300">Attendance Tracking</a></li>
-                <li><a href="/leave" class="hover:text-gray-300">Leave Management</a></li>
-                <li><a href="/salary" class="hover:text-gray-300">Payroll System</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-            <h3 class="text-lg font-semibold mb-4">Contact</h3>
-            <ul class="space-y-2">
-                <li><span class="block">📍 123 Office Street, Karachi, Pakistan</span></li>
-                <li><span class="block">📞 +92 321 1234567</span></li>
-                <li><span class="block">✉️ support@smartstaff.com</span></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="bg-blue-800 text-center text-gray-300 text-xs py-4">
-        &copy; {{ date('Y') }} SmartStaff ERP. All rights reserved.
-    </div>
-</footer>
 
 @endsection
